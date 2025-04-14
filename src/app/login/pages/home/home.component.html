@@ -1,0 +1,31 @@
+<main>
+  @if (counter() < 0) {
+  <h1 class="counter" style="color: red">{{ counter() }}</h1>
+  }@else {
+  <h1 class="counter">{{ counter() }}</h1>
+  }
+  <div>
+    <button (click)="increment()">Add</button>
+    <button (click)="decrement()">Remove</button>
+  </div>
+</main>
+
+<style>
+  main {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .counter {
+    font-size: 4rem;
+    font-weight: 400;
+    font-family: monospace;
+  }
+  div {
+    display: flex;
+    gap: 10px;
+  }
+</style>

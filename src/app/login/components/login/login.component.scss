@@ -1,0 +1,26 @@
+.title{
+  padding-block-end: 10px;
+}
+
+form{
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.user-data{
+  display: flex;
+  gap: 20px;
+
+  .data{
+    background: #f5f2e7;
+    border: solid 1px #b4a87d;
+    padding: 10px;
+  }
+
+  p{
+    font-family: monospace;
+  } 
+}
+

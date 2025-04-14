@@ -1,0 +1,7 @@
+<section *ngIf="isLoading">
+  <p>Loading...</p>
+</section>
+
+<main *ngIf="dog">
+  <img src="{{ dog.message }}" alt="" width="200" />
+</main>

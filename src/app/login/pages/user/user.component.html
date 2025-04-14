@@ -1,0 +1,20 @@
+<section *ngIf="isLoading">
+  <p>Loading...</p>
+</section>
+
+<main *ngIf="user">
+  <img src="{{ user.image }}" alt="" width="200" />
+  <h1>{{ user.firstName }} {{ user.maidenName }} {{ user.lastName }}</h1>
+  <p>username: {{ user.username }}</p>
+  <p>birthdate: {{ user.birthDate }}</p>
+  <p>email: {{ user.email }}</p>
+  <p>phone: {{ user.phone }}</p>
+  <p>age: {{ user.age }}</p>
+  <p>height: {{ user.height }}</p>
+  <p>ip: {{ user.ip }}</p>
+  <p>
+    address: {{ user.address.address }}, {{ user.address.postalCode }},
+    {{ user.address.city }}, {{ user.address.state }},
+    {{ user.address.country }}
+  </p>
+</main>

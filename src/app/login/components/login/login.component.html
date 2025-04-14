@@ -1,0 +1,35 @@
+<main>
+  <section class="user-data">
+    <div>
+      <div class="title">
+        <h1>Login</h1>
+      </div>
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <input type="text" formControlName="username" placeholder="Username" />
+        <input
+          type="password"
+          formControlName="password"
+          placeholder="Password"
+        />
+        <button type="submit">Login</button>
+      </form>
+    </div>
+    <section *ngIf="isLoading">
+      <p>Loading...</p>
+    </section>
+
+    <div
+      class="data"
+      *ngIf="userData"
+      [routerLink]="['/auth/user', userData.id]"
+    >
+      <img src="{{ userData.image }}" alt="" />
+      <p>id: {{ userData.id }}</p>
+      <p>username: {{ userData.username }}</p>
+      <p>First name: {{ userData.firstName }}</p>
+      <p>Last name: {{ userData.lastName }}</p>
+      <p>email: {{ userData.email }}</p>
+      <p>gender: {{ userData.gender }}</p>
+    </div>
+  </section>
+</main>

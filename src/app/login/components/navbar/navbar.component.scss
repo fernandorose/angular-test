@@ -1,0 +1,41 @@
+section{
+  position: fixed;
+  width: 200px;
+  height: 100dvh;
+  border-right: solid 1px lightgray;
+  padding: 5px;
+  background: rgb(233, 233, 233);
+  nav{
+
+    ul{
+      flex-direction: column;
+      display: flex;
+      gap: 3px;
+      li{
+        flex-direction: column;
+        display: flex;
+        padding: 5px;
+        width: 100%;
+        cursor: pointer;
+
+        a{
+          text-decoration: none;
+          color: inherit;
+        }
+      }
+      li:hover{
+        background: linear-gradient(to right, #6d6d6d, #c0c0c0);
+        color: #fff;
+      }
+      .active-link{
+        width: 100%;
+        padding: 5px;
+        width: 100%;
+        cursor: pointer;
+ 
+        background: linear-gradient(to right, #6d6d6d, #c0c0c0);
+        color: #fff;
+      }
+    }
+  }
+}

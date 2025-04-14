@@ -1,0 +1,14 @@
+<section>
+  <nav>
+    <ul>
+      @for (navLink of navLinks; track navLink.label) {
+      <li
+        [routerLinkActive]="['active-link']"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        <a [routerLink]="[navLink.path]">{{ navLink.label }}</a>
+      </li>
+      }
+    </ul>
+  </nav>
+</section>
