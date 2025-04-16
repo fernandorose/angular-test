@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { CookieService } from 'ngx-cookie-service';
 
 interface UserResponse {
   id: number;
@@ -15,7 +16,10 @@ interface UserResponse {
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
-  constructor(private httpClient: HttpClient) {}
+  constructor(
+    private httpClient: HttpClient,
+    private cookieService: CookieService
+  ) {}
 
   private apiUrl = 'https://dummyjson.com/auth/login';
   private getUserUrl = 'https://dummyjson.com/auth/me';
@@ -44,5 +48,14 @@ export class AuthService {
       {},
       { headers }
     );
+  }
+
+  removeToken(): void {
+    this.cookieService.delete('accessToken');
+    window.location.reload();
+  }
+
+  isAuthenticated(): boolean {
+    return this.cookieService.check('accessToken');
   }
 }
